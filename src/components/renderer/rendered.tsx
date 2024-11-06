@@ -1,24 +1,20 @@
-import Actions from '../actions/actions'
-import './renderer.css'
-import WaveVisualizer from './visualizer/visualizer'
+import Actions from '../actions/actions';
+import './renderer.css';
+import WaveVisualizer from './visualizer/visualizer';
 
-
-function Renderer({isKickActive}: any) {
+function Renderer({ activePad }: any) {
     return (
-        <>
-            <div className='renderer-wrapper'>
-                <div className='renderer'>
-                    <WaveVisualizer isKickActive={isKickActive}></WaveVisualizer>
-                </div>
-                <div className='action-wrapper'>
-                    <Actions></Actions>
-                    <Actions></Actions>
-                    <Actions></Actions>
-                </div>
+        <div className='renderer-wrapper'>
+            <div className='renderer'>
+            <WaveVisualizer activePad={activePad} />
             </div>
-        </>
-    )
+            <div className='action-wrapper'>
+                <Actions />
+                <Actions />
+                <Actions />
+            </div>
+        </div>
+    );
 }
 
-
-export default Renderer
+export default Renderer;
